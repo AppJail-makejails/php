@@ -1,0 +1,24 @@
+INCLUDE options/options.makejail
+
+ARG php_version=81
+ARG php_type=production
+ARG php_use_fpm=1
+
+RAW if ! echo "${php_version}" | grep -qEe '^8[0-2]$'; then
+RAW 	echo "VALID VERSIONS: 80, 81, 82"
+RAW 	exit 1
+RAW fi
+
+PKG php${php_version}
+
+RAW case "${php_type}" in
+RAW 	development|production) ;;
+RAW 	*) echo "VALID TYPES: development, production"; exit 1
+RAW esac
+
+CMD ln -s /usr/local/etc/php.ini-${php_type} /usr/local/etc/php.ini
+
+RAW if [ "${php_use_fpm}" != "0" ]; then
+	SYSRC php_fpm_enable=YES
+	SERVICE php-fpm start
+RAW fi
