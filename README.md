@@ -32,7 +32,7 @@ Where `options/network.makejail` are the options that suit your environment, for
 ARG network
 ARG interface=php
 
-OPTION virtualnet=${network}:${interface}
+OPTION virtualnet=${network}:${interface} default
 OPTION nat
 ```
 
