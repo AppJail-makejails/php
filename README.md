@@ -47,6 +47,12 @@ appjail makejail -j php -- --php_tag 81
 appjail makejail -j php -- --php_use_fpm 0
 ```
 
+### Arguments
+
+* `php_tag` (default: `83`): see [#tags](#tags).
+* `php_type` (default: `production`): The PHP configuration file to link to `/usr/local/etc/php.ini`. Valid values: `development`, `production`.
+* `php_use_fpm` (default: `1`): If different than `0`, enable and run php-fpm.
+
 ## How to build the Image
 
 Make any changes you want to your image.
@@ -76,8 +82,6 @@ appjail image export php
 ### Arguments
 
 * `php_version` (default: `83`): PHP version. Valid values: `80`, `81`, `82`, `83`.
-* `php_type` (default: `production`): The PHP configuration file to link to `/usr/local/etc/php.ini`. Valid values: `development`, `production`.
-* `php_use_fpm` (default: `1`): If different than `0`, enable and run php-fpm.
 
 ## Tags
 
