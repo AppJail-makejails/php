@@ -4,8 +4,7 @@ ARG php_type=production
 ARG php_use_fpm=1
 ARG php_tag=83
 
-#FROM --entrypoint gh+AppJail-makejails/php php:${php_tag}
-FROM --entrypoint /tmp/php/.ajspec php:${php_tag}
+FROM --entrypoint gh+AppJail-makejails/php php:${php_tag}
 
 RAW case "${php_type}" in
 RAW 	development|production) ;;
