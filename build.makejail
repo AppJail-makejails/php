@@ -1,0 +1,10 @@
+INCLUDE options/options.makejail
+
+ARG php_version=83
+
+RAW if ! echo "${php_version}" | grep -qEe '^8[0-3]$'; then
+RAW 	echo "VALID VERSIONS: 80, 81, 82, 83"
+RAW 	exit 1
+RAW fi
+
+PKG php${php_version}

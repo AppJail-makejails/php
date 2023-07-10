@@ -1,15 +1,11 @@
 INCLUDE options/options.makejail
 
-ARG php_version=81
 ARG php_type=production
 ARG php_use_fpm=1
+ARG php_tag=83
 
-RAW if ! echo "${php_version}" | grep -qEe '^8[0-2]$'; then
-RAW 	echo "VALID VERSIONS: 80, 81, 82"
-RAW 	exit 1
-RAW fi
-
-PKG php${php_version}
+#FROM --entrypoint gh+AppJail-makejails/php php:${php_tag}
+FROM --entrypoint /tmp/php/.ajspec php:${php_tag}
 
 RAW case "${php_type}" in
 RAW 	development|production) ;;

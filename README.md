@@ -8,8 +8,6 @@ wikipedia.org/wiki/PHP
 
 ## How to use this Makejail
 
-### Basic usage
-
 Create a `Makejail` in your PHP project.
 
 ```
@@ -29,7 +27,7 @@ RUN main.php
 Where `options/network.makejail` are the options that suit your environment, for example:
 
 ```
-ARG network
+ARG network?
 ARG interface=php
 
 OPTION virtualnet=${network}:${interface} default
@@ -38,29 +36,58 @@ OPTION nat
 
 Open a shell and run `appjail makejail`:
 
-```
-appjail makejail -j php -- --network development
+```sh
+# Install the latest PHP version.
+appjail makejail -j php
 
 # Install 8.1:
-appjail makejail -j php -- --network development --php_version 81
+appjail makejail -j php -- --php_tag 81
 
 # Disable php-fpm:
-appjail makejail -j php -- --network development --php_use_fpm 0
+appjail makejail -j php -- --php_use_fpm 0
 ```
 
-### PHP Extensions
+## How to build the Image
 
-Since `php_version` argument is defined, you can use it to install an extension of that PHP version.
+Make any changes you want to your image.
 
 ```
 INCLUDE options/network.makejail
-INCLUDE gh+AppJail-makejails/php
+INCLUDE gh+AppJail-makejails/php --file build.makejail
+```
 
-PKG php${php_version}-extensions
+Build the jail:
+
+```
+appjail makejail -j php
+```
+
+Remove unportable or unnecessary files and directories and export the jail:
+
+```
+appjail stop php
+appjail cmd local php sh -c "rm -f var/log/*"
+appjail cmd local php sh -c "rm -f var/db/pkg/*"
+appjail cmd local php sh -c "rm -f var/cache/pkg/*"
+appjail cmd local php vi etc/rc.conf
+appjail image export php
 ```
 
 ### Arguments
 
-* `php_version` (default: `81`): PHP version. Valid values: `80`, `81`, `82`.
+* `php_version` (default: `83`): PHP version. Valid values: `80`, `81`, `82`, `83`.
 * `php_type` (default: `production`): The PHP configuration file to link to `/usr/local/etc/php.ini`. Valid values: `development`, `production`.
 * `php_use_fpm` (default: `1`): If different than `0`, enable and run php-fpm.
+
+## Tags
+
+| Tag | Arch | Version |
+| --- | --- | --- |
+| `83` | `amd64` | `13.2-RELEASE` |
+| `82` | `amd64` | `13.2-RELEASE` |
+| `81` | `amd64` | `13.2-RELEASE` |
+| `80` | `amd64` | `13.2-RELEASE` |
+| `13.1-83` | `amd64` | `13.1-RELEASE` |
+| `13.1-82` | `amd64` | `13.1-RELEASE` |
+| `13.1-81` | `amd64` | `13.1-RELEASE` |
+| `13.1-80` | `amd64` | `13.1-RELEASE` |
