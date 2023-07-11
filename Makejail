@@ -2,7 +2,7 @@ INCLUDE options/options.makejail
 
 ARG php_type=production
 ARG php_use_fpm=1
-ARG php_tag=83
+ARG php_tag=13.2-83
 
 FROM --entrypoint gh+AppJail-makejails/php php:${php_tag}
 

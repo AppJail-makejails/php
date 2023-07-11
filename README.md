@@ -41,7 +41,7 @@ Open a shell and run `appjail makejail`:
 appjail makejail -j php
 
 # Install 8.1:
-appjail makejail -j php -- --php_tag 81
+appjail makejail -j php -- --php_tag 13.2-81
 
 # Disable php-fpm:
 appjail makejail -j php -- --php_use_fpm 0
@@ -73,8 +73,8 @@ Remove unportable or unnecessary files and directories and export the jail:
 ```
 appjail stop php
 appjail cmd local php sh -c "rm -f var/log/*"
-appjail cmd local php sh -c "rm -f var/db/pkg/*"
 appjail cmd local php sh -c "rm -f var/cache/pkg/*"
+appjail cmd local php sh -c "rm -f var/run/*"
 appjail cmd local php vi etc/rc.conf
 appjail image export php
 ```
@@ -85,12 +85,12 @@ appjail image export php
 
 ## Tags
 
-| Tag | Arch | Version |
-| --- | --- | --- |
-| `83` | `amd64` | `13.2-RELEASE` |
-| `82` | `amd64` | `13.2-RELEASE` |
-| `81` | `amd64` | `13.2-RELEASE` |
-| `80` | `amd64` | `13.2-RELEASE` |
+| Tag       | Arch    | Version        |
+| --------- | ------- | -------------- |
+| `13.2-83` | `amd64` | `13.2-RELEASE` |
+| `13.2-82` | `amd64` | `13.2-RELEASE` |
+| `13.2-81` | `amd64` | `13.2-RELEASE` |
+| `13.2-80` | `amd64` | `13.2-RELEASE` |
 | `13.1-83` | `amd64` | `13.1-RELEASE` |
 | `13.1-82` | `amd64` | `13.1-RELEASE` |
 | `13.1-81` | `amd64` | `13.1-RELEASE` |
