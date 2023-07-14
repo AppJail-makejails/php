@@ -43,15 +43,15 @@ appjail makejail -j php
 # Install 8.1:
 appjail makejail -j php -- --php_tag 13.2-81
 
-# Disable php-fpm:
-appjail makejail -j php -- --php_use_fpm 0
+# Enable php-fpm:
+appjail makejail -j php -- --php_use_fpm 1
 ```
 
 ### Arguments
 
 * `php_tag` (default: `83`): see [#tags](#tags).
 * `php_type` (default: `production`): The PHP configuration file to link to `/usr/local/etc/php.ini`. Valid values: `development`, `production`.
-* `php_use_fpm` (default: `1`): If different than `0`, enable and run php-fpm.
+* `php_use_fpm` (default: `0`): If different than `0`, enable and run php-fpm.
 
 ## How to build the Image
 
