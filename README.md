@@ -95,3 +95,7 @@ appjail image export php
 | `13.1-82` | `amd64` | `13.1-RELEASE-p8` | `thin` |
 | `13.1-81` | `amd64` | `13.1-RELEASE-p8` | `thin` |
 | `13.1-80` | `amd64` | `13.1-RELEASE-p8` | `thin` |
+
+## Notes
+
+1. `/usr/local/etc/php-fpm.d/www.conf`:`listen` is set to `0.0.0.0:9000`.

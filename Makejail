@@ -14,6 +14,10 @@ RAW esac
 CMD ln -s /usr/local/etc/php.ini-${php_type} /usr/local/etc/php.ini
 
 RAW if [ "${php_use_fpm}" != "0" ]; then
+	CMD if [ -f "/usr/local/etc/php-fpm.d/www.conf" ]; then \
+		sed -i '' -Ee '/^listen[[:space:]]*=/s#.*#listen = 0.0.0.0:9000#' \
+			/usr/local/etc/php-fpm.d/www.conf; \
+	    fi
 	SYSRC php_fpm_enable=YES
 	SERVICE php-fpm start
 RAW fi
