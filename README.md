@@ -87,14 +87,10 @@ appjail image export php
 
 | Tag       | Arch    | Version           | Type   |
 | --------- | ------- | ----------------- | ------ |
-| `13.2-83` | `amd64` | `13.2-RELEASE-p1` | `thin` |
-| `13.2-82` | `amd64` | `13.2-RELEASE-p1` | `thin` |
-| `13.2-81` | `amd64` | `13.2-RELEASE-p1` | `thin` |
-| `13.2-80` | `amd64` | `13.2-RELEASE-p1` | `thin` |
-| `13.1-83` | `amd64` | `13.1-RELEASE-p8` | `thin` |
-| `13.1-82` | `amd64` | `13.1-RELEASE-p8` | `thin` |
-| `13.1-81` | `amd64` | `13.1-RELEASE-p8` | `thin` |
-| `13.1-80` | `amd64` | `13.1-RELEASE-p8` | `thin` |
+| `13.2-83` | `amd64` | `13.2-RELEASE-p2` | `thin` |
+| `13.2-82` | `amd64` | `13.2-RELEASE-p2` | `thin` |
+| `13.2-81` | `amd64` | `13.2-RELEASE-p2` | `thin` |
+| `13.2-80` | `amd64` | `13.2-RELEASE-p2` | `thin` |
 
 ## Notes
 
