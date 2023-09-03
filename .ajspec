@@ -1,31 +1,31 @@
 tags: 13.2-80
 13.2-80.arch: amd64
 13.2-80.name: "php"
-13.2-80.timestamp.amd64: 1692900338
-13.2-80.sum.amd64: 6e9d11d60cc88189c03126c87d753777e21d6f71710849a805caec2c32e7a3e4
-13.2-80.size.amd64: 24384780
+13.2-80.timestamp.amd64: 1693674198
+13.2-80.sum.amd64: d6044a39d6fb76b126216b82d6159a5287b587f4c71eeca741342483efe8e921
+13.2-80.size.amd64: 25856416
 13.2-80.source.amd64: "http://appjail.hpc.at/php/13.2-80-amd64-image.appjail"
 
 tags+: 13.2-81
 13.2-81.arch: amd64
 13.2-81.name: "php"
-13.2-81.timestamp.amd64: 1692899845
-13.2-81.sum.amd64: 9422636e0d409a6678476cf8d45f20ed040f176f57773502855e372ac3760137
-13.2-81.size.amd64: 26295468
+13.2-81.timestamp.amd64: 1693671276
+13.2-81.sum.amd64: e4b0d3e72d6c0cf6638fc908a84c493e084326f545f13728f8299c4b98bb7a6b
+13.2-81.size.amd64: 24905360
 13.2-81.source.amd64: "http://appjail.hpc.at/php/13.2-81-amd64-image.appjail"
 
 tags+: 13.2-82
 13.2-82.arch: amd64
 13.2-82.name: "php"
-13.2-82.timestamp.amd64: 1692899444
-13.2-82.sum.amd64: 0a357538c323d7b8f476b0a048e8ff6c1e80ee3fdc9a0b2422d90cba60014742
-13.2-82.size.amd64: 26551780
+13.2-82.timestamp.amd64: 1693673353
+13.2-82.sum.amd64: 49b307b6ce9db5530d9221b47df2db7f1267127b226f7a83ab1ded30ad05ebcd
+13.2-82.size.amd64: 26297260
 13.2-82.source.amd64: "http://appjail.hpc.at/php/13.2-82-amd64-image.appjail"
 
 tags+: 13.2-83
 13.2-83.arch: amd64
 13.2-83.name: "php"
-13.2-83.timestamp.amd64: 1692900723
-13.2-83.sum.amd64: daa03bee8bbe761f77453c5b574eb8924b114619f75812b2c2fe6d7ac0268ce9
-13.2-83.size.amd64: 24928224
+13.2-83.timestamp.amd64: 1693672212
+13.2-83.sum.amd64: 63093a3cbcf47b745033dd0c08df73a84da0bc12c937f0bfaac5560f47061bef
+13.2-83.size.amd64: 25143904
 13.2-83.source.amd64: "http://appjail.hpc.at/php/13.2-83-amd64-image.appjail"
