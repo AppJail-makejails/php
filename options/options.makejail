@@ -1,4 +1,4 @@
-OPTION overwrite
+OPTION overwrite=force
 OPTION resolv_conf
 OPTION start
 OPTION tzdata
