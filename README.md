@@ -85,12 +85,12 @@ appjail image export php
 
 ## Tags
 
-| Tag       | Arch    | Version           | Type   |
-| --------- | ------- | ----------------- | ------ |
-| `13.2-83` | `amd64` | `13.2-RELEASE` | `thin` |
-| `13.2-82` | `amd64` | `13.2-RELEASE` | `thin` |
-| `13.2-81` | `amd64` | `13.2-RELEASE` | `thin` |
-| `13.2-80` | `amd64` | `13.2-RELEASE` | `thin` |
+| Tag       | Arch    | Version        | Type   | `php_version` |
+| --------- | ------- | -------------- | ------ | ------------- |
+| `13.2-83` | `amd64` | `13.2-RELEASE` | `thin` |      `83`     |
+| `13.2-82` | `amd64` | `13.2-RELEASE` | `thin` |      `82`     |
+| `13.2-81` | `amd64` | `13.2-RELEASE` | `thin` |      `81`     |
+| `13.2-80` | `amd64` | `13.2-RELEASE` | `thin` |      `80`     |
 
 ## Notes
 
