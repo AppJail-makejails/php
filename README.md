@@ -49,7 +49,7 @@ appjail makejail -j php -- --php_use_fpm 1
 
 ### Arguments
 
-* `php_tag` (default: `83`): see [#tags](#tags).
+* `php_tag` (default: `13.2-83`): see [#tags](#tags).
 * `php_type` (default: `production`): The PHP configuration file to link to `/usr/local/etc/php.ini`. Valid values: `development`, `production`.
 * `php_use_fpm` (default: `0`): If different than `0`, enable and run php-fpm.
 
