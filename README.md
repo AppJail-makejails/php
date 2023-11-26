@@ -91,6 +91,10 @@ appjail image export php
 | `13.2-82` | `amd64` | `13.2-RELEASE` | `thin` |      `82`     |
 | `13.2-81` | `amd64` | `13.2-RELEASE` | `thin` |      `81`     |
 | `13.2-80` | `amd64` | `13.2-RELEASE` | `thin` |      `80`     |
+| `14.0-83` | `amd64` | `14.0-RELEASE` | `thin` |      `83`     |
+| `14.0-82` | `amd64` | `14.0-RELEASE` | `thin` |      `82`     |
+| `14.0-81` | `amd64` | `14.0-RELEASE` | `thin` |      `81`     |
+| `14.0-80` | `amd64` | `14.0-RELEASE` | `thin` |      `80`     |
 
 ## Notes
 
