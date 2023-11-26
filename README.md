@@ -53,36 +53,6 @@ appjail makejail -j php -- --php_use_fpm 1
 * `php_type` (default: `production`): The PHP configuration file to link to `/usr/local/etc/php.ini`. Valid values: `development`, `production`.
 * `php_use_fpm` (default: `0`): If different than `0`, enable and run php-fpm.
 
-## How to build the Image
-
-Make any changes you want to your image.
-
-```
-INCLUDE options/network.makejail
-INCLUDE gh+AppJail-makejails/php --file build.makejail
-```
-
-Build the jail:
-
-```
-appjail makejail -j php
-```
-
-Remove unportable or unnecessary files and directories and export the jail:
-
-```
-appjail stop php
-appjail cmd local php sh -c "rm -f var/log/*"
-appjail cmd local php sh -c "rm -f var/cache/pkg/*"
-appjail cmd local php sh -c "rm -f var/run/*"
-appjail cmd local php vi etc/rc.conf
-appjail image export php
-```
-
-### Arguments
-
-* `php_version` (default: `83`): PHP version. Valid values: `80`, `81`, `82`, `83`.
-
 ## Tags
 
 | Tag       | Arch    | Version        | Type   | `php_version` |
