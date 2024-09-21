@@ -19,5 +19,5 @@ RAW if [ "${php_use_fpm}" != "0" ]; then
 			/usr/local/etc/php-fpm.d/www.conf; \
 	    fi
 	SYSRC php_fpm_enable=YES
-	SERVICE php-fpm start
+	SERVICE php_fpm start
 RAW fi
