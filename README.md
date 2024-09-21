@@ -41,7 +41,7 @@ Open a shell and run `appjail makejail`:
 appjail makejail -j php
 
 # Install 8.1:
-appjail makejail -j php -- --php_tag 13.3-81
+appjail makejail -j php -- --php_tag 13.4-81
 
 # Enable php-fpm:
 appjail makejail -j php -- --php_use_fpm 1
@@ -49,7 +49,7 @@ appjail makejail -j php -- --php_use_fpm 1
 
 ### Arguments
 
-* `php_tag` (default: `13.3-84`): see [#tags](#tags).
+* `php_tag` (default: `13.4-84`): see [#tags](#tags).
 * `php_type` (default: `production`): The PHP configuration file to link to `/usr/local/etc/php.ini`. Valid values: `development`, `production`.
 * `php_use_fpm` (default: `0`): If different than `0`, enable and run php-fpm.
 
@@ -57,10 +57,10 @@ appjail makejail -j php -- --php_use_fpm 1
 
 | Tag       | Arch    | Version        | Type   | `php_version` |
 | --------- | ------- | -------------- | ------ | ------------- |
-| `13.3-84` | `amd64` | `13.3-RELEASE` | `thin` |      `84`     |
-| `13.3-83` | `amd64` | `13.3-RELEASE` | `thin` |      `83`     |
-| `13.3-82` | `amd64` | `13.3-RELEASE` | `thin` |      `82`     |
-| `13.3-81` | `amd64` | `13.3-RELEASE` | `thin` |      `81`     |
+| `13.4-84` | `amd64` | `13.4-RELEASE` | `thin` |      `84`     |
+| `13.4-83` | `amd64` | `13.4-RELEASE` | `thin` |      `83`     |
+| `13.4-82` | `amd64` | `13.4-RELEASE` | `thin` |      `82`     |
+| `13.4-81` | `amd64` | `13.4-RELEASE` | `thin` |      `81`     |
 | `14.1-84` | `amd64` | `14.1-RELEASE` | `thin` |      `84`     |
 | `14.1-83` | `amd64` | `14.1-RELEASE` | `thin` |      `83`     |
 | `14.1-82` | `amd64` | `14.1-RELEASE` | `thin` |      `82`     |
