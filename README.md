@@ -61,10 +61,10 @@ appjail makejail -j php -- --php_use_fpm 1
 | `13.4-83` | `amd64` | `13.4-RELEASE` | `thin` |      `83`     |
 | `13.4-82` | `amd64` | `13.4-RELEASE` | `thin` |      `82`     |
 | `13.4-81` | `amd64` | `13.4-RELEASE` | `thin` |      `81`     |
-| `14.1-84` | `amd64` | `14.1-RELEASE` | `thin` |      `84`     |
-| `14.1-83` | `amd64` | `14.1-RELEASE` | `thin` |      `83`     |
-| `14.1-82` | `amd64` | `14.1-RELEASE` | `thin` |      `82`     |
-| `14.1-81` | `amd64` | `14.1-RELEASE` | `thin` |      `81`     |
+| `14.2-84` | `amd64` | `14.2-RELEASE` | `thin` |      `84`     |
+| `14.2-83` | `amd64` | `14.2-RELEASE` | `thin` |      `83`     |
+| `14.2-82` | `amd64` | `14.2-RELEASE` | `thin` |      `82`     |
+| `14.2-81` | `amd64` | `14.2-RELEASE` | `thin` |      `81`     |
 
 ## Notes
 
