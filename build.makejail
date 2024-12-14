@@ -2,9 +2,9 @@ INCLUDE options/options.makejail
 
 ARG php_version=84
 
-RAW if ! echo "${php_version}" | grep -qEe '^8[1-4]$'; then
-RAW 	echo "VALID VERSIONS: 81, 82, 83, 84"
-RAW 	exit 1
-RAW fi
+RAW case "${php_version}" in
+RAW     81|82|83|84) ;;
+RAW     *) echo "VALID VERSIONS: 81, 82, 83, 84"; exit 1 ;;
+RAW esac
 
 PKG php${php_version}

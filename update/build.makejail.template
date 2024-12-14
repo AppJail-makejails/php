@@ -1,0 +1,10 @@
+INCLUDE options/options.makejail
+
+ARG php_version=%%PHP4%%
+
+RAW case "${php_version}" in
+RAW     %%PHP1%%|%%PHP2%%|%%PHP3%%|%%PHP4%%) ;;
+RAW     *) echo "VALID VERSIONS: %%PHP1%%, %%PHP2%%, %%PHP3%%, %%PHP4%%"; exit 1 ;;
+RAW esac
+
+PKG php${php_version}
