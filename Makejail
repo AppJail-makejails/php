@@ -3,7 +3,7 @@ INCLUDE options/options.makejail
 ARG php_type=production
 ARG php_use_fpm=0
 ARG php_ajspec=gh+AppJail-makejails/php
-ARG php_tag=13.5-84
+ARG php_tag=14.3-84
 
 FROM --entrypoint "${php_ajspec}" php:${php_tag}
 
