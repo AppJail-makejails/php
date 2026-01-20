@@ -1,10 +1,10 @@
 INCLUDE options/options.makejail
 
-ARG php_version=84
+ARG php_version=85
 
 RAW case "${php_version}" in
-RAW     81|82|83|84) ;;
-RAW     *) echo "VALID VERSIONS: 81, 82, 83, 84"; exit 1 ;;
+RAW     82|83|84|85) ;;
+RAW     *) echo "VALID VERSIONS: 82, 83, 84, 85"; exit 1 ;;
 RAW esac
 
 PKG php${php_version}

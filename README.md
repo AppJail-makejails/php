@@ -41,7 +41,7 @@ Open a shell and run `appjail makejail`:
 appjail makejail -j php
 
 # Install a specific version
-appjail makejail -j php -- --php_tag 14.3-81
+appjail makejail -j php -- --php_tag 14.3-82
 
 # Enable php-fpm:
 appjail makejail -j php -- --php_use_fpm 1
@@ -49,7 +49,7 @@ appjail makejail -j php -- --php_use_fpm 1
 
 ### Arguments
 
-* `php_tag` (default: `14.3-84`): see [#tags](#tags).
+* `php_tag` (default: `14.3-85`): see [#tags](#tags).
 * `php_ajspec` (default: `gh+AppJail-makejails/php`): Entry point where the `appjail-ajspec(5)` file is located.
 * `php_type` (default: `production`): The PHP configuration file to link to `/usr/local/etc/php.ini`. Valid values: `development`, `production`.
 * `php_use_fpm` (default: `0`): If different than `0`, enable and run php-fpm.
@@ -58,14 +58,14 @@ appjail makejail -j php -- --php_use_fpm 1
 
 | Tag                 | Arch    | Version            | Type   | `php_version` |
 | ------------------- | ------- | ------------------ | ------ | ------------- |
+| `14.3-85` | `amd64` | `14.3-RELEASE` | `thin` | `85`    |
 | `14.3-84` | `amd64` | `14.3-RELEASE` | `thin` | `84`    |
 | `14.3-83` | `amd64` | `14.3-RELEASE` | `thin` | `83`    |
 | `14.3-82` | `amd64` | `14.3-RELEASE` | `thin` | `82`    |
-| `14.3-81` | `amd64` | `14.3-RELEASE` | `thin` | `81`    |
+| `15-85` | `amd64` | `15` | `thin` | `85`    |
 | `15-84` | `amd64` | `15` | `thin` | `84`    |
 | `15-83` | `amd64` | `15` | `thin` | `83`    |
 | `15-82` | `amd64` | `15` | `thin` | `82`    |
-| `15-81` | `amd64` | `15` | `thin` | `81`    |
 
 ## Notes
 
