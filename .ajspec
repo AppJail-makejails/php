@@ -54,4 +54,3 @@ tags+: 15-82
 15-82.sum.amd64: 7a50af4e88ba42b0ea3f3e7dcc1258c97689de37b3cfe64b6065f54d7bb5902d
 15-82.size.amd64: 215247917
 15-82.source.amd64: "http://appjail.hpc.at/php/15-82-amd64-image.appjail"
-maintenance: "This image is uploading, please wait a moment and try again. If you are importing this image using a Makejail that has the '--<name>_ajspec' argument, you can use the 'reproduce' method to use 'appjail-reproduce'. See 'appjail-image(5)' for details."
