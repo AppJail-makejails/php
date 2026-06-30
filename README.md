@@ -1,72 +1,87 @@
 # php
 
-PHP, which stands for "PHP: Hypertext Preprocessor" is a widely-used Open Source general-purpose scripting language that is especially suited for Web development and can be embedded into HTML.  Its syntax draws upon C, Java, and Perl, and is easy to learn.  The main goal of the language is to allow web developers to write dynamically generated webpages quickly, but you can do much more with PHP.
+PHP is a server-side scripting language designed for web development, but which can also be used as a general-purpose programming language. PHP can be added to straight HTML or it can be used with a variety of templating engines and web frameworks. PHP code is usually processed by an interpreter, which is either implemented as a native module on the web-server or as a common gateway interface (CGI).
 
 wikipedia.org/wiki/PHP
 
-![php logo](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/121px-PHP-logo.svg.png)
+<img src="https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/php/logo.png" width="30%" height="auto" alt="php logo">
 
 ## How to use this Makejail
 
-Create a `Makejail` in your PHP project.
+### Create a `Containerfile` in your PHP project
 
-```
-INCLUDE options/network.makejail
-INCLUDE gh+AppJail-makejails/php
-
-WORKDIR /app
-COPY app/
-
-STAGE cmd
-
-WORKDIR /app
-ENTRYPOINT php
-RUN main.php
+```dockerfile
+FROM ghcr.io/appjail-makejails/php:15.1-85
+COPY . /myapp
+WORKDIR /myapp
+CMD ["php", "./your-script.php"]
 ```
 
-Where `options/network.makejail` are the options that suit your environment, for example:
+Then, run the commands to build and run the OCI image:
 
-```
-ARG network?
-ARG interface=php
-
-OPTION virtualnet=${network}:${interface} default
-OPTION nat
-```
-
-Open a shell and run `appjail makejail`:
-
-```sh
-# Install the latest PHP version.
-appjail makejail -j php
-
-# Install a specific version
-appjail makejail -j php -- --php_tag 14.3-82
-
-# Enable php-fpm:
-appjail makejail -j php -- --php_use_fpm 1
+```console
+$ buildah build --network=host -t my-php-app .
+$ appjail oci run \
+    -o overwrite=force \
+    -o ephemeral \
+    -o alias \
+    -o ip4_inherit \
+    localhost/my-php-app my-php-app
 ```
 
-### Arguments
+### Run a single PHP script
 
-* `php_tag` (default: `14.3-85`): see [#tags](#tags).
-* `php_ajspec` (default: `gh+AppJail-makejails/php`): Entry point where the `appjail-ajspec(5)` file is located.
-* `php_type` (default: `production`): The PHP configuration file to link to `/usr/local/etc/php.ini`. Valid values: `development`, `production`.
-* `php_use_fpm` (default: `0`): If different than `0`, enable and run php-fpm.
+For many simple, single file projects, you may find it inconvenient to write a complete `Containerfile`. In such cases, you can run a PHP script by using the PHP OCI image directly:
 
-## Tags
+```console
+$ appjail oci run \
+    -o overwrite=force \
+    -o ephemeral \
+    -o alias \
+    -o ip4_inherit \
+    -o fstab="$PWD /myapp" \
+    -w /myapp \
+    ghcr.io/appjail-makejails/php:15.1-85 my-php-app \
+    php your-script.php
+```
 
-| Tag                 | Arch    | Version            | Type   | `php_version` |
-| ------------------- | ------- | ------------------ | ------ | ------------- |
-| `14.3-85` | `amd64` | `14.3-RELEASE` | `thin` | `85`    |
-| `14.3-84` | `amd64` | `14.3-RELEASE` | `thin` | `84`    |
-| `14.3-83` | `amd64` | `14.3-RELEASE` | `thin` | `83`    |
-| `14.3-82` | `amd64` | `14.3-RELEASE` | `thin` | `82`    |
-| `15-85` | `amd64` | `15` | `thin` | `85`    |
-| `15-84` | `amd64` | `15` | `thin` | `84`    |
-| `15-83` | `amd64` | `15` | `thin` | `83`    |
-| `15-82` | `amd64` | `15` | `thin` | `82`    |
+### Arguments (stage: build)
+
+* `php_from` (default: `ghcr.io/appjail-makejails/php`): Location of OCI image. See also [OCI Configuration](#oci-configuration).
+* `php_tag` (default: `latest`): OCI image tag. See also [OCI Configuration](#oci-configuration).
+
+### Environment (stage: build)
+
+* `PHP_USE_FPM` (optional): When set, php-fpm runs instead of the PHP CLI, with `/usr/local/www` as the working directory.
+
+
+## OCI Configuration
+
+```yaml
+build:
+  variants:
+    - tag: 15.1-82
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PHPVER: "82"
+    - tag: 15.1-83
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PHPVER: "83"
+    - tag: 15.1-84
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PHPVER: "84"
+    - tag: 15.1-85
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PHPVER: "85"
+```
 
 ## Notes
 
-1. `/usr/local/etc/php-fpm.d/www.conf`:`listen` is set to `0.0.0.0:9000`.
+1. This image installs `php.ini-production` as `php.ini`. You can always override or customize these settings.

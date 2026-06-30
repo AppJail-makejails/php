@@ -1,0 +1,22 @@
+build:
+  variants:
+    - tag: 15.1-82
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PHPVER: "82"
+    - tag: 15.1-83
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PHPVER: "83"
+    - tag: 15.1-84
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PHPVER: "84"
+    - tag: 15.1-85
+      containerfile: Containerfile
+      args:
+        FREEBSD_RELEASE: "15.1"
+        PHPVER: "85"
