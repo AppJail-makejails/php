@@ -5,7 +5,9 @@ set -e
 if [ -n "${PHP_USE_FPM}" ]; then
     PROCESS=php-fpm
 
-    set -- "${PROCESS}"
+    if [ $# -eq 0 ]; then
+        set -- "${PROCESS}"
+    fi
 else
     PROCESS=php
 
