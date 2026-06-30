@@ -45,6 +45,10 @@ $ appjail oci run \
     php your-script.php
 ```
 
+### Running as an arbitrary user
+
+For running this OCI image as an arbitrary user, `-u` flag to `appjail oci run` should be used (which can accept both a username/group in the container's `/etc/passwd` file like `-u www` or a specific UID/GID like `-u 80:80`).
+
 ### Arguments (stage: build)
 
 * `php_from` (default: `ghcr.io/appjail-makejails/php`): Location of OCI image. See also [OCI Configuration](#oci-configuration).
