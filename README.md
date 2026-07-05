@@ -81,6 +81,8 @@ build:
         PHPVER: "84"
     - tag: 15.1-85
       containerfile: Containerfile
+      aliases: ["latest"]
+      default: true
       args:
         FREEBSD_RELEASE: "15.1"
         PHPVER: "85"
