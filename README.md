@@ -54,6 +54,10 @@ For running this OCI image as an arbitrary user, `-u` flag to `appjail oci run` 
 * `php_from` (default: `ghcr.io/appjail-makejails/php`): Location of OCI image. See also [OCI Configuration](#oci-configuration).
 * `php_tag` (default: `latest`): OCI image tag. See also [OCI Configuration](#oci-configuration).
 
+### Environment (OCI image)
+
+* `PGID` (default: `1000`): Equivalent to `PUID` but for the Process Group ID.
+* `PUID` (default: `1000`): Process User ID for the container's main process, allowing you to match the owner of files written to mounted host volumes to your host system's user. Writable volumes are changed based on this environment variable.
 ### Environment (stage: build)
 
 * `PHP_USE_FPM` (optional): When set, php-fpm runs instead of the PHP CLI, with `/usr/local/www` as the working directory.
@@ -69,16 +73,22 @@ build:
       args:
         FREEBSD_RELEASE: "15.1"
         PHPVER: "82"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-83
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PHPVER: "83"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-84
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PHPVER: "84"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-85
       containerfile: Containerfile
       aliases: ["latest"]
@@ -86,6 +96,8 @@ build:
       args:
         FREEBSD_RELEASE: "15.1"
         PHPVER: "85"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
 ```
 
 ## Notes

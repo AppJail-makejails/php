@@ -3,6 +3,7 @@ ARG FREEBSD_RELEASE
 FROM ghcr.io/appjail-makejails/base:${FREEBSD_RELEASE}
 
 ARG PHPVER
+ARG NO_PKGCLEAN
 
 LABEL org.opencontainers.image.title="PHP" \
     org.opencontainers.image.description="While designed for web development, the PHP scripting language also provides general-purpose use" \
@@ -11,10 +12,15 @@ LABEL org.opencontainers.image.title="PHP" \
     org.opencontainers.image.vendor="DtxdF" \
     org.opencontainers.image.authors="Jesús Daniel Colmenares Oviedo <dtxdf@disroot.org>"
 
-RUN pkg update && \
-    pkg install php${PHPVER} php${PHPVER}-readline && \
-    pkg clean -a && \
-    rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
+RUN set -xe; \
+    \
+    pkg update; \
+    pkg install -U php${PHPVER} php${PHPVER}-readline; \
+    \
+    if [ -z "${NO_PKGCLEAN}" ]; then \
+        pkg clean -a; \
+        rm -rf /var/cache/pkg/* /var/db/pkg/repos/*; \
+    fi
 
 RUN set -eux; \
     \

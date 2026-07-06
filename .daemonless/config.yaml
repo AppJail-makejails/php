@@ -5,16 +5,22 @@ build:
       args:
         FREEBSD_RELEASE: "15.1"
         PHPVER: "82"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-83
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PHPVER: "83"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-84
       containerfile: Containerfile
       args:
         FREEBSD_RELEASE: "15.1"
         PHPVER: "84"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
     - tag: 15.1-85
       containerfile: Containerfile
       aliases: ["latest"]
@@ -22,3 +28,5 @@ build:
       args:
         FREEBSD_RELEASE: "15.1"
         PHPVER: "85"
+        NO_PKGCLEAN: "1"
+      cache_dirs: ["pkgcache0:/var/cache/pkg"]
