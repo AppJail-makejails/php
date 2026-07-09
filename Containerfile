@@ -53,7 +53,7 @@ RUN set -eux; \
 		echo 'decorate_workers_output = no'; \
 		echo; \
 		echo '; default listen address for easy override in later php-fpm.d/*.conf files'; \
-		echo 'listen = 9000'; \
+		echo 'listen = 0.0.0.0:9000'; \
 	} | tee ${PHP_FPM_DIR}/appjail.conf; \
 	{ \
 		echo '[global]'; \
