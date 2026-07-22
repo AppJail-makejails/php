@@ -19,8 +19,9 @@ RUN set -xe; \
     \
     if [ -z "${NO_PKGCLEAN}" ]; then \
         pkg clean -a; \
-        rm -rf /var/cache/pkg/* /var/db/pkg/repos/*; \
-    fi
+        rm -rf /var/cache/pkg/*; \
+    fi; \
+    rm -rf /var/db/pkg/repos/*
 
 RUN set -eux; \
     \
