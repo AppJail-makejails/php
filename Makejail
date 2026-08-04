@@ -1,5 +1,6 @@
 ARG php_from=ghcr.io/appjail-makejails/php
 ARG php_tag=latest
 
+OPTION container=boot
 OPTION overwrite=force
 OPTION from=${php_from}:${php_tag}
