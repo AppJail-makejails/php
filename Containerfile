@@ -15,7 +15,7 @@ LABEL org.opencontainers.image.title="PHP" \
 RUN set -xe; \
     \
     pkg update; \
-    pkg install -U php${PHPVER} php${PHPVER}-readline; \
+    pkg install php${PHPVER} php${PHPVER}-readline; \
     \
     if [ -z "${NO_PKGCLEAN}" ]; then \
         pkg clean -a; \
