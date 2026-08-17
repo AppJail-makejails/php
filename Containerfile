@@ -14,6 +14,8 @@ LABEL org.opencontainers.image.title="PHP" \
 
 RUN set -xe; \
     \
+    umask 0022; \
+    \
     pkg update; \
     pkg install php${PHPVER} php${PHPVER}-readline; \
     \
@@ -24,6 +26,8 @@ RUN set -xe; \
     rm -rf /var/db/pkg/repos/*
 
 RUN set -eux; \
+    \
+    umask 0022; \
     \
     PREFIX=/usr/local; \
     ETCDIR=${PREFIX}/etc; \
