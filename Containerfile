@@ -1,6 +1,6 @@
 ARG FREEBSD_RELEASE
 
-FROM ghcr.io/appjail-makejails/base:${FREEBSD_RELEASE}
+FROM ghcr.io/appjail-makejails/core:${FREEBSD_RELEASE}
 
 ARG PHPVER
 ARG NO_PKGCLEAN
