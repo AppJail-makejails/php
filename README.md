@@ -59,6 +59,7 @@ For running this OCI image as an arbitrary user, `-u` flag to `appjail oci run` 
 * `PHP_USE_FPM` (optional): When set, php-fpm runs instead of the PHP CLI, with `/usr/local/www` as the working directory.
 * `PGID` (default: `1000`): Equivalent to `PUID` but for the Process Group ID.
 * `PUID` (default: `1000`): Process User ID for the container's main process, allowing you to match the owner of files written to mounted host volumes to your host system's user. Writable volumes are changed based on this environment variable.
+* `UMASK` (default: `0022`): Override default umask setting.
 
 ## OCI Configuration
 
